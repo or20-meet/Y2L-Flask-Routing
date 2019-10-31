@@ -4,12 +4,14 @@ from flask import session as login_session
 app = Flask(__name__)
 app.secret_key = "MY_SUPER_SECRET_KEY"
 
+@app.route("/")
+def home():
+	return render_template("home.html")
 
-##### Code here ######
+@app.route("/store")
+def store():
+	return render_template("store.html")
 
-
-
-#####################
 
 
 if __name__ == '__main__':
