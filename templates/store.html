@@ -8,13 +8,13 @@
 <body>
 	<h1>store</h1>
 	<a href="{{url_for('home')}}" >homepage</a>
-	<div class="card">
-	  <img src="{{url_for('static', filename='mai.gif')}}" alt="mai boots" style="width:100%">
-	  <h2>MAI BOOTS</h1>
+
+	<div class="card" >
+	  <img src="{{url_for('static', filename='mai.gif')}}" alt="mai boots" style="width:50%">
+	  <h2>MAI BOOTS</h2>
 	  <p class="price">$19.99</p>
 	  <p>the perfect boots for a MAI look!</p>
-	  <p><button>Add to Cart</button></p>
+	  <a href="/cart"><button type="button">Add to Cart</button></a>
 	</div> 
-
 </body>
 </html>
