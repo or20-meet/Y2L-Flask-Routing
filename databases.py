@@ -15,6 +15,41 @@ def add_product(name, price, link, description):
 	session.add(student_object)
 	sessin.commit()
 
-def edit_product(id):
+def edit_name(id, name ):
 	prod = session.query(Product).filter_by(id = id)
-	prod
+	prod.name = name
+	session.commit()
+
+def edit_price(id, price):
+	prod = session.query(Product).filter_by(id=id)
+	prod.price = price
+	session.commit()
+
+def edit_link(id, link):
+	prod = session.query(Product).filter_by(id=id)
+	prod.link = link
+	session.commit()
+
+def edit_description(id, description):
+	prod = session.query(Product).filter_by(id=id)
+	prod.description = description
+	session.commit()
+
+def delete_product(id):
+	session.query(Product).filter_by(id = id).delete()
+	session.commit()
+
+def all_products():
+	products = session.query(Product).all()
+	return products
+
+def get_product(id):
+	prod = session.query(Product).filter_by(id=id)
+	return prod
+
+
+
+def add_to_cart(productid):
+	item = Cart(productID = productid)
+	session.add(item)
+	session.commit()

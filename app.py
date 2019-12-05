@@ -9,8 +9,8 @@ def home():
 	return render_template("home.html")
 
 @app.route("/store")
-def store():
-	return render_template("store.html")
+def store(product):
+	return render_template("store.html", product = product)
 
 @app.route("/cart")
 def cart():

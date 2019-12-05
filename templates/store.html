@@ -11,8 +11,8 @@
 
 	<div class="card" >
 	  <img src="{{url_for('static', filename='mai.gif')}}" alt="mai boots" style="width:50%">
-	  <h2>MAI BOOTS</h2>
-	  <p class="price">$19.99</p>
+	  <h2>{{product.name}}</h2>
+	  <p class="price">{{product.price}}</p>
 	  <p>the perfect boots for a MAI look!</p>
 	  <a href="/cart"><button type="button">Add to Cart</button></a>
 	</div> 
