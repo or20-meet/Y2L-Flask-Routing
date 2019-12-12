@@ -8,13 +8,14 @@
 <body>
 	<h1>store</h1>
 	<a href="{{url_for('home')}}" >homepage</a>
-
-	<div class="card" >
-	  <img src="{{url_for('static', filename='mai.gif')}}" alt="mai boots" style="width:50%">
-	  <h2>{{product.name}}</h2>
-	  <p class="price">{{product.price}}</p>
-	  <p>the perfect boots for a MAI look!</p>
-	  <a href="/cart"><button type="button">Add to Cart</button></a>
-	</div> 
+	{%for prod in products%}
+		<div class="card" >
+		  <img src="{{prod.link}}" >
+		  <h2>{{prod.name}}</h2>
+		  <p class="price">{{prod.price}}</p>
+		  <p>{{prod.description}}</p>
+		  <a href="{{url_for('/cart/{{prod.id')}}"><button type="button">Add to Cart</button></a>
+		</div> 
+	{%endfor%}
 </body>
 </html>
