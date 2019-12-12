@@ -9,12 +9,15 @@ def home():
 	return render_template("home.html")
 
 @app.route("/store")
-def store(product):
-	return render_template("store.html", product = product)
+def store():
+	products = all_products() 
+	return render_template("store.html", products = products)
 
-@app.route("/cart")
-def cart():
-	return render_template("cart.html")
+@app.route("/cart/<int:id>")
+def cart(id):
+	add_to_cart(id = id)
+	items = all_cart_items()
+	return render_template("cart.html", items = items)
 
 @app.route("/about")
 def about():

@@ -53,3 +53,7 @@ def add_to_cart(productid):
 	item = Cart(productID = productid)
 	session.add(item)
 	session.commit()
+
+def all_cart_items():
+	items = session.query(Cart).all()
+	return items
